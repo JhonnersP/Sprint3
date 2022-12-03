@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/candiwallppr"
-    tools:context=".MainActivity">
+    tools:context=".Home">
 
     <LinearLayout
         android:layout_width="match_parent"

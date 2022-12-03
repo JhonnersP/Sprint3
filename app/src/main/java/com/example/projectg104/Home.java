@@ -7,21 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class Home extends AppCompatActivity {
 
     private Button btn_Home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home);
 
         btn_Home = (Button) findViewById(R.id.btn_Home);
 
         btn_Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity2.class);
+                Intent intent = new Intent(getApplicationContext(), ProductList.class);
                 startActivity(intent);
             }
         });
