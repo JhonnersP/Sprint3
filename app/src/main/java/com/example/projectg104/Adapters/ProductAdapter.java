@@ -45,19 +45,27 @@ public class ProductAdapter extends BaseAdapter {
     }
 
     @Override
-    //getView es el que hace todo
+    //getView es el que carga elementos en la lista
+    // Realiza una especie de For para cargar todos los elementos en la lista
     public View getView(int position, View convertView, ViewGroup viewGroup) {
 
         View view = convertView;
         LayoutInflater layoutInflater = LayoutInflater.from(this.context);
+        //Se referencia la plantilla de carga de elementos
         view= layoutInflater.inflate(R.layout.product_template,null);
 
         Product product = arrayProducts.get(position);
+        //Cargar boton de plantilla
         btn_product = (Button)  view.findViewById(R.id.btn_productTemplate);
+        //Cargar imagen de plantilla
         ImageView imgProductTemplate = (ImageView)  view.findViewById(R.id.imgProductTemplate);
+        //Cargar Nombre producto plantilla
         TextView textNameTemplate = (TextView) view.findViewById(R.id.textNameTemplate);
+        //Cargar descripcion producto plantilla
         TextView textDescriptionTemplate = (TextView) view.findViewById(R.id.textDescriptionTemplate);
+        //Cargar precio producto plantilla
         TextView textPriceTemplate = (TextView) view.findViewById(R.id.textPriceTemplate);
+
 
         imgProductTemplate.setImageResource(product.getImage());
         textNameTemplate.setText(product.getName());
