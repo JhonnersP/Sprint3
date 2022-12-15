@@ -2,6 +2,8 @@ package com.example.projectg104.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,8 +68,9 @@ public class ProductAdapter extends BaseAdapter {
         //Cargar precio producto plantilla
         TextView textPriceTemplate = (TextView) view.findViewById(R.id.textPriceTemplate);
 
-
-        imgProductTemplate.setImageResource(product.getImage());
+        byte[] image = product.getImage();
+        Bitmap bitmap = BitmapFactory.decodeByteArray(image,0,image.length);
+        imgProductTemplate.setImageBitmap(bitmap);
         textNameTemplate.setText(product.getName());
         textDescriptionTemplate.setText(product.getDescription());
         textPriceTemplate.setText(String.valueOf(product.getPrice()));
@@ -76,10 +79,8 @@ public class ProductAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(context, ProductDetail.class);
-                intent.putExtra("title", product.getName());
-                intent.putExtra("productDescription", product.getDescription());
-                intent.putExtra("imageCode",product.getImage());
+                Intent intent = new Intent(context.getApplicationContext(), ProductDetail.class);
+                intent.putExtra("id", String.valueOf(product.getId()));
                 context.startActivity(intent);
 
 

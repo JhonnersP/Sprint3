@@ -7,9 +7,9 @@
     <string name="btn_InfoProduct1">INFO</string>
     <string name="btn_InfoProduct2">INFO</string>
     <string name="btn_InfoProduct3">INFO</string>
-    <string name="text_Product1">Milky Way</string>
-    <string name="text_Product2">MMs</string>
-    <string name="text_Product3">Chocoramo</string>
+    <string name="text_Product1">Nombre</string>
+    <string name="text_Product2">Descripcion</string>
+    <string name="text_Product3">Precio</string>
     <string name="text_titleHome">PRODUCTOS</string>
 
     // Strings MaintActivity3
